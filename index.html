@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ChunkSpeak 是一个英语口语语块训练网站，帮助中文学习者用高频表达、场景例句、听读和练习把英语说成现成表达。"
+    />
+    <meta property="og:title" content="ChunkSpeak | Speak in chunks, not translations" />
+    <meta
+      property="og:description"
+      content="用语块训练英语口语：收藏、跟读、文章发现、打字和填空练习。"
+    />
+    <meta property="og:type" content="website" />
+    <title>ChunkSpeak | Speak in chunks, not translations</title>
+    <link rel="stylesheet" href="./styles.css?v=compact-checkin" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="site-noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ChunkSpeak home">
+        <span class="brand-mark">CS</span>
+        <span>
+          <strong>ChunkSpeak</strong>
+          <small>Lexical fluency studio</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="页面导航">
+        <a href="#method">Method</a>
+        <a href="#mission">Daily</a>
+        <a href="#library">Library</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#practice-module">Practice</a>
+      </nav>
+      <a class="header-cta" href="#pricing">Get premium</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-copy reveal-on-scroll is-visible">
+          <span class="eyebrow">Speak faster by remembering smarter</span>
+          <h1>Speak in chunks, not translations.</h1>
+          <p>
+            ChunkSpeak helps Chinese learners turn useful English phrases into ready-made spoken
+            instinct through listening, recall, article mining, and daily practice.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#mission">Start today's 8 chunks</a>
+            <a class="secondary-action" href="#library">Explore phrase orbit</a>
+          </div>
+          <div class="hero-metrics" aria-label="学习数据">
+            <div>
+              <strong id="total-count">0</strong>
+              <span>chunks</span>
+            </div>
+            <div>
+              <strong id="favorite-count">0</strong>
+              <span>saved</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>drills</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-orbit reveal-on-scroll is-visible" aria-label="语块轨道展示">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="orbit-ring ring-three"></div>
+          <article class="orbit-card orbit-card-a">
+            <span>Opinion</span>
+            <strong>The way I see it...</strong>
+          </article>
+          <article class="orbit-card orbit-card-b">
+            <span>Suggestion</span>
+            <strong>Maybe we could...</strong>
+          </article>
+          <article class="orbit-card orbit-card-c">
+            <span>Refusal</span>
+            <strong>I wish I could, but...</strong>
+          </article>
+          <article class="orbit-card orbit-card-d">
+            <span>Clarify</span>
+            <strong>To put it another way...</strong>
+          </article>
+          <div class="audio-stage" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="method-section reveal-on-scroll" id="method" aria-label="词块训练法">
+        <div class="method-copy">
+          <span class="eyebrow">Lexical Approach</span>
+          <h2>3-step chunk training</h2>
+          <p>这块从“概念展示”改成真正的学习动线：先选语块，再听例句，最后用练习把它敲进脑子里。</p>
+        </div>
+        <div class="method-flow">
+          <a class="method-step" href="#library">
+            <span>01</span>
+            <strong>Pick</strong>
+            <em>选今天要练的语块</em>
+          </a>
+          <a class="method-step" href="#library">
+            <span>02</span>
+            <strong>Listen</strong>
+            <em>点开卡片听例句</em>
+          </a>
+          <a class="method-step" href="#practice-module">
+            <span>03</span>
+            <strong>Recall</strong>
+            <em>打字 / 填空 / 选择</em>
+          </a>
+        </div>
+      </section>
+
+      <section class="mission-section reveal-on-scroll" id="mission" aria-label="每日打卡">
+        <div class="mission-copy">
+          <div class="mission-main">
+            <span class="eyebrow">Daily Mission</span>
+            <h2>今日 <span id="mastered-count">0</span>/<span id="daily-goal-text">8</span></h2>
+            <p id="checkin-message">完成目标后打卡。</p>
+            <div class="checkin-progress">
+              <div class="checkin-progress-fill" id="checkin-progress-fill"></div>
+            </div>
+          </div>
+          <div class="mission-actions">
+            <div class="goal-picker" aria-label="选择每日目标">
+              <button class="goal-chip" data-goal="5">5</button>
+              <button class="goal-chip active" data-goal="8">8</button>
+              <button class="goal-chip" data-goal="15">15</button>
+              <button class="goal-chip" data-goal="30">30</button>
+            </div>
+            <button id="checkin-button" class="checkin-button">完成今日打卡</button>
+          </div>
+          <div class="mission-mini">
+            <div>
+              <strong><span id="streak-count">0</span>/<span id="best-streak-count">0</span></strong>
+              <span>连续 / 最长</span>
+            </div>
+            <div>
+              <strong><span id="mini-goal-count">8</span></strong>
+              <span>目标</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div class="week-dots" id="week-dots" aria-label="最近七天打卡记录"></div>
+        </div>
+      </section>
+
+      <section class="pricing-section reveal-on-scroll" id="pricing" aria-label="付费解锁">
+        <div class="pricing-copy">
+          <span class="eyebrow">Founding Pass</span>
+          <h2>把免费语块库升级成可持续更新的完整口语系统。</h2>
+          <p>
+            免费版适合体验学习方法；付费版适合把它当成长期口语素材库使用。先用 Creem 收款，后续可接账号系统和会员解锁。
+          </p>
+        </div>
+        <article class="pricing-card">
+          <div class="price-head">
+            <span class="pill">首发版</span>
+            <strong>完整语块库</strong>
+            <p>建议首发价：¥39 等值</p>
+          </div>
+          <ul class="premium-list">
+            <li>300+ 高频口语语块更新资格</li>
+            <li>PDF / Notion 资料包交付</li>
+            <li>后续 AI 造句和真人音频优先体验</li>
+          </ul>
+          <button id="buy-premium" class="premium-button" type="button">用 Creem 购买</button>
+          <small id="payment-note">配置 Creem payment link 后，这个按钮会直接跳转付款。</small>
+        </article>
+      </section>
+
+      <section class="control-deck reveal-on-scroll" id="library" aria-label="学习控制台">
+        <div class="category-rail">
+          <span class="side-label">Phrase orbit</span>
+          <nav class="nav-list" aria-label="语块分类">
+            <button class="nav-item active" data-category="全部">
+              <span class="nav-index">00</span>
+              <span><strong>全部语块</strong><small>先浏览，再收藏</small></span>
+              <em id="nav-count-all">0</em>
+            </button>
+            <button class="nav-item" data-category="表达观点">
+              <span class="nav-index">01</span>
+              <span><strong>表达观点</strong><small>更自然地说 I think</small></span>
+              <em data-count="表达观点">0</em>
+            </button>
+            <button class="nav-item" data-category="提出建议">
+              <span class="nav-index">02</span>
+              <span><strong>提出建议</strong><small>不生硬地给建议</small></span>
+              <em data-count="提出建议">0</em>
+            </button>
+            <button class="nav-item" data-category="社交寒暄">
+              <span class="nav-index">03</span>
+              <span><strong>社交寒暄</strong><small>开启真实聊天</small></span>
+              <em data-count="社交寒暄">0</em>
+            </button>
+            <button class="nav-item" data-category="委婉拒绝">
+              <span class="nav-index">04</span>
+              <span><strong>委婉拒绝</strong><small>有边界也有礼貌</small></span>
+              <em data-count="委婉拒绝">0</em>
+            </button>
+            <button class="nav-item" data-category="解释说明">
+              <span class="nav-index">05</span>
+              <span><strong>解释说明</strong><small>把想法讲清楚</small></span>
+              <em data-count="解释说明">0</em>
+            </button>
+          </nav>
+        </div>
+
+        <div class="workspace">
+          <section class="toolbar" aria-label="搜索和筛选">
+            <label class="search-box">
+              <span>Search</span>
+              <input id="search-input" type="search" placeholder="Try: refusal / personally / 观点 / AI" />
+            </label>
+            <div class="mode-switch" role="group" aria-label="显示模式">
+              <button class="mode-button active" data-view="all">全部</button>
+              <button class="mode-button" data-view="favorites">收藏</button>
+              <button class="mode-button" data-view="mastered">已掌握</button>
+            </div>
+          </section>
+
+          <section class="module-tabs" aria-label="学习模块">
+            <button class="module-tab active" data-module="library">词块背诵</button>
+            <button class="module-tab" data-module="article">文章发现</button>
+            <button class="module-tab" data-module="practice">快速练习</button>
+          </section>
+
+          <section class="module-view active" id="library-module">
+            <section class="library-header">
+              <div>
+                <span class="eyebrow">Current deck</span>
+                <h2 id="library-title">全部语块</h2>
+              </div>
+              <p id="library-subtitle">从高频表达开始，建立自己的口语素材库。</p>
+            </section>
+
+            <section class="custom-chunk-box reveal-on-scroll">
+              <div>
+                <span class="eyebrow">My Phrasebook</span>
+                <h2>Catch phrases from anywhere.</h2>
+                <p>从视频、文章、聊天里看到好表达，就放进自己的生词本。</p>
+              </div>
+              <div class="custom-form">
+                <input id="custom-phrase" type="text" placeholder="English chunk: That rings a bell." />
+                <input id="custom-meaning" type="text" placeholder="中文意思：听起来有点耳熟。" />
+                <input id="custom-scene" type="text" placeholder="场景，可选：聊天回应" />
+                <button id="add-custom-chunk">加入生词本</button>
+              </div>
+            </section>
+
+            <section class="card-grid" id="card-grid" aria-live="polite"></section>
+            <button class="load-more-btn" id="loadMore" type="button">加载更多语块</button>
+          </section>
+
+          <section class="module-view" id="article-module">
+            <section class="article-workbench">
+              <div class="article-input-panel">
+                <span class="eyebrow">Article Mining</span>
+                <h2>Scan text like a phrase radar.</h2>
+                <p>粘贴英文文章，系统会标出已收录词块。你也可以选中任意短语，加入自己的生词本。</p>
+                <textarea id="article-input" placeholder="Paste an English article here...">To be honest, learning English feels easier when you notice chunks. From my point of view, you don't need perfect grammar to start speaking. The point is, practice matters more than memorizing rules.</textarea>
+                <div class="article-actions">
+                  <button id="scan-article">扫描词块</button>
+                  <button id="save-selection">把选中文本加入生词本</button>
+                </div>
+              </div>
+              <div class="article-output-panel">
+                <span class="eyebrow">Found Chunks</span>
+                <div id="article-results" class="article-results"></div>
+              </div>
+            </section>
+          </section>
+
+          <section class="module-view" id="practice-module">
+            <section class="practice-lab">
+              <div class="practice-lab-head">
+                <span class="eyebrow">Quick Practice</span>
+                <h2>Make the phrase fire before your brain starts translating.</h2>
+                <p>从收藏、已掌握和自定义词块里出题；如果还没有记录，就先用默认词块练。</p>
+              </div>
+              <div class="practice-mode-switch">
+                <button class="practice-mode active" data-practice-mode="type">打字敲击</button>
+                <button class="practice-mode" data-practice-mode="blank">填空练习</button>
+                <button class="practice-mode" data-practice-mode="choice">中英选择</button>
+              </div>
+              <div class="quiz-card">
+                <div>
+                  <span id="quiz-label" class="pill">打字敲击</span>
+                  <h3 id="quiz-prompt">点击开始练习</h3>
+                  <p id="quiz-hint">系统会从你的词块库里抽题。</p>
+                </div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div class="quiz-answer-row">
+                  <input id="quiz-answer" type="text" placeholder="在这里输入答案" />
+                  <button id="check-answer">检查</button>
+                  <button id="next-question">下一题</button>
+                </div>
+                <p id="quiz-feedback" class="quiz-feedback">准备好后点击“下一题”。</p>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="study-modal" id="study-modal" aria-hidden="true">
+      <button class="modal-backdrop" id="modal-backdrop" aria-label="关闭学习面板"></button>
+      <article class="study-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+        <header class="study-panel-head">
+          <div>
+            <span id="detail-category" class="pill">表达观点</span>
+            <h2 id="detail-title">Personally, I feel that...</h2>
+            <p id="detail-meaning">就我个人而言</p>
+          </div>
+          <div class="panel-actions">
+            <button id="speak-main" class="round-button" aria-label="播放语块">
+              <span class="play-icon"></span>
+            </button>
+            <button id="close-modal" class="close-button" aria-label="关闭">×</button>
+          </div>
+        </header>
+
+        <div class="panel-scroll">
+          <section class="detail-section">
+            <span class="section-label">场景使用指引</span>
+            <p id="detail-scene"></p>
+            <p id="detail-tone"></p>
+          </section>
+
+          <section class="detail-section">
+            <span class="section-label">词块观察</span>
+            <div class="chunk-lens" id="chunk-lens"></div>
+          </section>
+
+          <section class="detail-section">
+            <span class="section-label">母语者常用例句</span>
+            <div id="examples-list" class="examples-list"></div>
+          </section>
+
+          <section class="practice-box">
+            <span class="section-label">免费句库练习</span>
+            <p id="practice-tip"></p>
+            <div class="practice-steps">
+              <div><strong>1</strong><span>输入关键词或场景</span></div>
+              <div><strong>2</strong><span>匹配现成高质量例句</span></div>
+              <div><strong>3</strong><span>替换关键词并跟读</span></div>
+            </div>
+            <div class="practice-format">
+              <strong>不消耗 AI 额度：</strong>
+              <span>输入：工作 / AI / 休息 / 拒绝 / 观点</span>
+              <em>系统会从内置句库里找适合当前词块的练习句。</em>
+            </div>
+            <div class="sample-row" aria-label="练习示范">
+              <button class="sample-chip" data-sample="工作">工作</button>
+              <button class="sample-chip" data-sample="AI">AI</button>
+              <button class="sample-chip" data-sample="休息">休息</button>
+              <button class="sample-chip" data-sample="拒绝">拒绝</button>
+            </div>
+            <div class="practice-row">
+              <input
+                id="practice-input"
+                type="text"
+                placeholder="输入关键词或场景，例如：工作、AI、休息、拒绝"
+              />
+              <button id="practice-button">找例句</button>
+            </div>
+            <p id="practice-output" class="practice-output">
+              输入关键词后，会从免费句库里推荐适合当前词块的练习句。
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <button id="backToTop" type="button" aria-label="回到顶部">↑</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
