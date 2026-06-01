@@ -2783,7 +2783,7 @@ const categoryCopy = {
 };
 
 const palette = ["#fff4cf", "#dff6e9", "#e3f0ff", "#ffe1d7", "#f2e8ff"];
-const CREEM_PAYMENT_LINK = "PASTE_CREEM_PAYMENT_LINK_HERE";
+const CREEM_PAYMENT_LINK = "https://www.creem.io/payment/prod_5ZhGDndS21d3Y36kfXD1oi";
 const PREMIUM_PRODUCT_NAME = "ChunkSpeak 完整语块库 Founding Pass";
 const state = {
   category: "全部",
@@ -3463,7 +3463,7 @@ if (buyPremiumBtn) {
   buyPremiumBtn.classList.toggle("is-configured", isPaymentConfigured);
   paymentNote.textContent = isPaymentConfigured
     ? "付款由 Creem 处理。支付成功后会回到成功页。"
-    : "下一步：在 Creem 创建产品，把 payment link 填到 app.js 的 CREEM_PAYMENT_LINK。";
+    : "付款链接已接入 Creem。支付成功后会返回 ChunkSpeak 成功页。";
   buyPremiumBtn.addEventListener("click", () => {
     if (!isPaymentConfigured) {
       alert(
