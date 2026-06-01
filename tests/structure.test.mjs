@@ -5,6 +5,8 @@ const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const css = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
 const js = readFileSync(new URL("../app.js", import.meta.url), "utf8");
 const successHtml = readFileSync(new URL("../success.html", import.meta.url), "utf8");
+const privacyHtml = readFileSync(new URL("../privacy.html", import.meta.url), "utf8");
+const termsHtml = readFileSync(new URL("../terms.html", import.meta.url), "utf8");
 const vercelConfig = readFileSync(new URL("../vercel.json", import.meta.url), "utf8");
 
 const requiredIds = [
@@ -32,5 +34,9 @@ assert.match(js, /IntersectionObserver/, "missing scroll reveal observer");
 assert.match(css, /prefers-reduced-motion/, "missing reduced motion support");
 assert.match(js, /CREEM_PAYMENT_LINK/, "missing Creem payment link config");
 assert.match(html, /完整语块库/, "missing paid product copy");
+assert.match(html, /privacy\.html/, "missing privacy link");
+assert.match(html, /terms\.html/, "missing terms link");
 assert.match(successHtml, /支付成功/, "missing payment success page");
+assert.match(privacyHtml, /Privacy Policy/, "missing privacy page");
+assert.match(termsHtml, /Terms of Service/, "missing terms page");
 assert.match(vercelConfig, /cleanUrls/, "missing Vercel static config");
